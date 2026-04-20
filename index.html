@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The NewNature Deck &mdash; You Are Not What You&rsquo;ve Been Through.</title>
+<meta name="description" content="A scripture-based PDF declaration guide for people walking through addiction. Written without shame. Rooted in the Word. For every stage — struggle, recovery, and freedom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+/*
+PALETTE — Deep, grounding, hopeful
+Deep navy:    #0F1F3D  (strength, depth, anchor)
+Bright gold:  #D4A843  (dawn, new beginning)
+Soft gold:    #F0C84A  (light breaking through)
+Sky white:    #F8FBFF  (clean, new, pure)
+Pale blue:    #EBF2FC  (calm, peace)
+Slate blue:   #2A4A7F  (trust, steadiness)
+Muted blue:   #6A85AA  (gentle, non-triggering)
+Dark text:    #0D1B30
+*/
+
+body {
+font-family: ‘Lato’, ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
+background: #ffffff;
+color: #0D1B30;
+overflow-x: hidden;
+line-height: 1.6;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+background: #0F1F3D;
+text-align: center;
+padding: 11px 16px;
+font-size: 13px;
+font-weight: 700;
+color: #D4A843;
+letter-spacing: 0.8px;
+}
+
+/* ── NAV ── */
+nav {
+background: #ffffff;
+border-bottom: 2px solid #D8E6F5;
+padding: 16px 32px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: 0 2px 16px rgba(15,31,61,0.07);
+}
+.nav-logo {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 20px;
+font-weight: 900;
+color: #0D1B30;
+text-decoration: none;
+}
+.nav-logo span { color: #2A4A7F; }
+.nav-cta {
+background: #0F1F3D;
+color: #D4A843;
+padding: 10px 22px;
+border-radius: 50px;
+font-size: 13px;
+font-weight: 700;
+text-decoration: none;
+white-space: nowrap;
+border: 2px solid #D4A843;
+transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .87; }
+
+/* ── HERO ── */
+.hero {
+background: linear-gradient(160deg, #0F1F3D 0%, #1A3060 60%, #2A4A7F 100%);
+padding: 96px 24px 108px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.hero::before {
+content: ‘’;
+position: absolute;
+width: 600px; height: 600px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 65%);
+top: -200px; right: -120px;
+pointer-events: none;
+}
+.hero::after {
+content: ‘’;
+position: absolute;
+width: 500px; height: 500px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(42,74,127,0.4) 0%, transparent 65%);
+bottom: -150px; left: -100px;
+pointer-events: none;
+}
+.hero-badge {
+display: inline-block;
+background: rgba(212,168,67,0.15);
+border: 1.5px solid rgba(212,168,67,0.4);
+color: #D4A843;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+padding: 8px 20px;
+border-radius: 50px;
+margin-bottom: 32px;
+}
+.hero h1 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(36px, 7.5vw, 78px);
+font-weight: 900;
+line-height: 1.06;
+color: #ffffff;
+margin-bottom: 16px;
+letter-spacing: -1.5px;
+}
+.hero h1 em { font-style: italic; color: #D4A843; }
+.hero-sub {
+font-size: clamp(16px, 2.5vw, 21px);
+color: rgba(255,255,255,0.72);
+font-weight: 300;
+max-width: 620px;
+margin: 0 auto 44px;
+line-height: 1.8;
+}
+.hero-sub strong { font-weight: 700; color: #ffffff; }
+.hero-verse {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-style: italic;
+font-size: 15px;
+color: #D4A843;
+margin-bottom: 40px;
+opacity: 0.88;
+line-height: 1.65;
+}
+.hero-btn {
+display: inline-block;
+background: #D4A843;
+color: #0D1B30;
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 19px;
+font-weight: 900;
+padding: 18px 52px;
+border-radius: 50px;
+text-decoration: none;
+box-shadow: 0 8px 32px rgba(212,168,67,0.4);
+transition: transform .2s, box-shadow .2s;
+}
+.hero-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(212,168,67,0.5); }
+.hero-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: .5px; }
+
+/* ── STAGES STRIP ── */
+.stages {
+background: #2A4A7F;
+padding: 26px 24px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px 32px;
+}
+.stage-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 12px;
+font-weight: 700;
+color: #F0C84A;
+letter-spacing: 0.3px;
+}
+.stage-dot { width: 7px; height: 7px; border-radius: 50%; background: #F0C84A; flex-shrink: 0; }
+
+/* ── STATS ── */
+.hero-stats {
+display: flex;
+justify-content: center;
+gap: 48px;
+flex-wrap: wrap;
+padding: 52px 24px;
+background: #F8FBFF;
+border-bottom: 1px solid #D8E6F5;
+}
+.stat { text-align: center; }
+.stat-n { font-family: ‘Playfair Display’, Georgia, serif; font-size: 40px; font-weight: 900; color: #0F1F3D; line-height: 1; }
+.stat-l { font-size: 11px; color: #6A85AA; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
+
+/* ── SHARED ── */
+.sec { padding: 88px 24px; }
+.in { max-width: 700px; margin: 0 auto; }
+.in.wide { max-width: 920px; }
+.bg-pale  { background: #EBF2FC; }
+.bg-sky   { background: #F8FBFF; }
+.bg-wh    { background: #ffffff; }
+
+/* ── EYEBROW ── */
+.ey {
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: #2A4A7F;
+margin-bottom: 18px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.ey::after { content:’’; height:1.5px; width:40px; background:rgba(42,74,127,0.3); border-radius:2px; }
+
+/* ── HEADLINE ── */
+h2.hl {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(28px, 4.5vw, 44px);
+font-weight: 900;
+line-height: 1.15;
+margin-bottom: 28px;
+color: #0D1B30;
+letter-spacing: -0.5px;
+}
+h2.hl em { font-style: italic; color: #2A4A7F; }
+h2.hl .gold { color: #C9920A; }
+
+/* ── BODY ── */
+.bt { font-size: 17px; line-height: 1.88; color: #2C3E5A; font-weight: 300; margin-bottom: 20px; }
+.bt strong { font-weight: 700; color: #0D1B30; }
+
+/* ── PULLQUOTE ── */
+.pq {
+border-left: 4px solid #D4A843;
+background: rgba(212,168,67,0.07);
+padding: 22px 28px;
+margin: 36px 0;
+border-radius: 0 10px 10px 0;
+}
+.pq p {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(17px, 2.5vw, 22px);
+font-style: italic;
+color: #0D1B30;
+line-height: 1.55;
+margin: 0;
+}
+.pq .ref {
+font-family: ‘Lato’, Arial, sans-serif;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+color: #2A4A7F;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-top: 10px;
+display: block;
+}
+
+/* ── DARK STRIP ── */
+.ds {
+background: linear-gradient(160deg, #0A1628 0%, #0F1F3D 100%);
+padding: 88px 24px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.ds::before {
+content: ‘’;
+position: absolute;
+width: 700px; height: 700px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(42,74,127,0.3) 0%, transparent 65%);
+top: -250px; left: 50%;
+transform: translateX(-50%);
+pointer-events: none;
+}
+.ds .in { max-width: 680px; position: relative; }
+.ds h2 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(28px, 4.5vw, 46px);
+font-weight: 900;
+color: #ffffff;
+line-height: 1.15;
+margin-bottom: 20px;
+letter-spacing: -0.5px;
+}
+.ds h2 em { color: #D4A843; font-style: italic; }
+.ds p { font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.88; font-weight: 300; margin-bottom: 16px; }
+.ds p strong { color: #ffffff; font-weight: 700; }
+.ds .verse {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-style: italic;
+font-size: 16px;
+color: #D4A843;
+margin-top: 28px;
+opacity: 0.9;
+line-height: 1.65;
+}
+
+/* ── FEATURE CARDS ── */
+.fg { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 12px; }
+.fc {
+background: #ffffff;
+border: 1.5px solid #D8E6F5;
+border-radius: 16px;
+padding: 30px 26px;
+border-top: 4px solid #2A4A7F;
+}
+.fc-icon { font-size: 30px; margin-bottom: 14px; }
+.fc-title { font-family: ‘Playfair Display’, Georgia, serif; font-size: 18px; font-weight: 700; color: #0D1B30; margin-bottom: 8px; }
+.fc-desc { font-size: 14px; color: #2C3E5A; line-height: 1.72; font-weight: 300; }
+
+/* ── PILLARS ── */
+.pillar-grid { display: grid; gap: 14px; margin-top: 12px; }
+.pg {
+display: flex;
+align-items: flex-start;
+gap: 18px;
+padding: 24px 26px;
+border-radius: 16px;
+background: #ffffff;
+border: 1.5px solid #D8E6F5;
+transition: transform .15s, box-shadow .15s;
+}
+.pg:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(15,31,61,0.09); }
+.pg-num {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 13px;
+font-weight: 900;
+color: #D4A843;
+background: #0F1F3D;
+min-width: 36px; height: 36px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+border: 2px solid #D4A843;
+}
+.pg-icon { font-size: 20px; margin-bottom: 6px; }
+.pg-title { font-weight: 700; font-size: 16px; color: #0D1B30; margin-bottom: 6px; }
+.pg-desc { font-size: 14px; color: #2C3E5A; line-height: 1.65; font-weight: 300; }
+
+/* ── TESTIMONIALS ── */
+.tg { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 12px; }
+.tc {
+background: #ffffff;
+border: 1.5px solid #D8E6F5;
+border-radius: 16px;
+padding: 28px 24px;
+position: relative;
+}
+.tc::before {
+content: ‘\201C’;
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 80px;
+color: #2A4A7F;
+opacity: 0.07;
+position: absolute;
+top: 8px; left: 16px;
+line-height: 1;
+}
+.tc-stars { font-size: 14px; margin-bottom: 12px; color: #D4A843; }
+.tc-text { font-size: 15px; color: #2C3E5A; line-height: 1.78; font-style: italic; font-weight: 300; margin-bottom: 16px; }
+.tc-name { font-weight: 700; font-size: 13px; color: #0D1B30; }
+.tc-role { font-size: 12px; color: #6A85AA; }
+
+/* ── PROMISE STRIP ── */
+.promise-strip {
+background: linear-gradient(135deg, #0F1F3D 0%, #1A3060 100%);
+padding: 64px 24px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.promise-strip::before {
+content: ‘’;
+position: absolute;
+width: 400px; height: 400px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(212,168,67,0.1) 0%, transparent 65%);
+top: -100px; right: -80px;
+pointer-events: none;
+}
+.promise-strip h3 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(20px, 3.5vw, 34px);
+font-weight: 900;
+color: #ffffff;
+line-height: 1.35;
+max-width: 680px;
+margin: 0 auto;
+position: relative;
+}
+.promise-strip h3 em { font-style: italic; color: #D4A843; }
+
+/* ── NOTE BOX ── */
+.note-box {
+background: rgba(212,168,67,0.08);
+border: 1.5px solid rgba(212,168,67,0.25);
+border-radius: 14px;
+padding: 24px 28px;
+margin: 40px 0;
+display: flex;
+gap: 14px;
+align-items: flex-start;
+}
+.note-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.note-text { font-size: 15px; color: #2C3E5A; line-height: 1.72; font-weight: 300; }
+.note-text strong { font-weight: 700; color: #0D1B30; }
+
+/* ── CTA ── */
+.cta-sec {
+background: linear-gradient(160deg, #EBF2FC 0%, #F8FBFF 60%, #ffffff 100%);
+padding: 100px 24px;
+text-align: center;
+}
+.cta-box {
+background: #ffffff;
+border: 2px solid #D8E6F5;
+border-radius: 24px;
+padding: 56px 40px;
+max-width: 580px;
+margin: 0 auto;
+box-shadow: 0 20px 60px rgba(15,31,61,0.1);
+}
+.cta-box h2 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(26px, 4vw, 38px);
+font-weight: 900;
+color: #0D1B30;
+line-height: 1.2;
+margin-bottom: 16px;
+}
+.cta-box h2 em { color: #2A4A7F; font-style: italic; }
+.cta-box > p { font-size: 16px; color: #2C3E5A; line-height: 1.78; font-weight: 300; margin-bottom: 32px; }
+.cta-price {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 68px;
+font-weight: 900;
+color: #0D1B30;
+line-height: 1;
+margin-bottom: 6px;
+}
+.cta-price-note { font-size: 14px; color: #6A85AA; margin-bottom: 28px; }
+.cta-btn {
+display: block;
+width: 100%;
+background: #0F1F3D;
+color: #D4A843;
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 20px;
+font-weight: 700;
+padding: 20px;
+border-radius: 14px;
+text-decoration: none;
+border: 2px solid #D4A843;
+box-shadow: 0 8px 28px rgba(15,31,61,0.25);
+transition: transform .2s, box-shadow .2s;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(15,31,61,0.35); }
+.cta-inc { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+.cta-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #2C3E5A; font-weight: 300; text-align: left; }
+.cta-chk {
+width: 22px; height: 22px;
+background: rgba(15,31,61,0.08);
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 11px; color: #0F1F3D;
+flex-shrink: 0; font-weight: 700;
+border: 1.5px solid rgba(15,31,61,0.18);
+}
+.cta-guar {
+margin-top: 24px; padding-top: 24px;
+border-top: 1px solid #D8E6F5;
+font-size: 13px; color: #6A85AA; line-height: 1.65;
+}
+.cta-guar a { color: #2A4A7F; text-decoration: none; font-weight: 700; }
+.cta-verse {
+margin-top: 28px;
+font-family: ‘Playfair Display’, Georgia, serif;
+font-style: italic;
+font-size: 14px;
+color: #C9920A;
+line-height: 1.65;
+opacity: 0.9;
+}
+
+/* ── FOOTER ── */
+footer {
+background: linear-gradient(160deg, #0A1628 0%, #0F1F3D 100%);
+padding: 56px 24px;
+text-align: center;
+}
+.fl { font-family: ‘Playfair Display’, Georgia, serif; font-size: 22px; font-weight: 900; color: #ffffff; margin-bottom: 4px; }
+.fl span { color: #D4A843; }
+.fl-sub { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+footer p { font-size: 13px; color: rgba(255,255,255,0.3); line-height: 2; }
+footer a { color: #D4A843; text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width:600px) {
+nav { padding: 14px 16px; }
+.nav-cta { padding: 9px 14px; font-size: 12px; }
+.cta-box { padding: 36px 20px; }
+.cta-price { font-size: 52px; }
+.hero-btn { padding: 16px 32px; font-size: 17px; }
+.stages { gap: 8px 16px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+  &#127775; Scripture-Based &middot; Written Without Shame &middot; For Every Stage of the Journey
+</div>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">Koino<span>Cards</span></a>
+  <a href="https://morningkoinonia.selar.com/7761079f77" target="_blank" class="nav-cta">Get It Now &mdash; $14.99 &rarr;</a>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+
+<section class="hero">
+  <div class="hero-badge">For Every Stage &middot; No Shame &middot; Scripture-Rooted</div>
+
+  <h1>
+    You Are Not<br>
+    What You&rsquo;ve <em>Been Through.</em>
+  </h1>
+
+  <p class="hero-sub">
+    <strong>The NewNature Deck</strong> is a scripture-rooted PDF guide of powerful declarations for anyone walking through addiction &mdash; in the struggle, in early recovery, or learning to live free. Written without shame. Rooted in the Word. For the person who still believes God is not done with them.
+  </p>
+
+  <p class="hero-verse">
+    &#8220;Therefore, if anyone is in Christ, the new creation has come:<br>
+    The old has gone, the new is here.&#8221; &mdash; 2 Corinthians 5:17
+  </p>
+
+  <a href="https://morningkoinonia.selar.com/7761079f77" target="_blank" class="hero-btn">
+    Get Your Copy Now &mdash; $14.99 &rarr;
+  </a>
+  <p class="hero-note">Digital download &middot; Instant access &middot; No shame. Just truth.</p>
+</section>
+
+<!-- STAGES STRIP -->
+
+<div class="stages">
+  <div class="stage-item"><div class="stage-dot"></div>Still in the Struggle</div>
+  <div class="stage-item"><div class="stage-dot"></div>Early Recovery</div>
+  <div class="stage-item"><div class="stage-dot"></div>Building a New Identity</div>
+  <div class="stage-item"><div class="stage-dot"></div>Walking in Freedom</div>
+  <div class="stage-item"><div class="stage-dot"></div>Staying Free</div>
+</div>
+
+<!-- STATS -->
+
+<div class="hero-stats">
+  <div class="stat"><div class="stat-n">&#128218;</div><div class="stat-l">Scripture-Rooted</div></div>
+  <div class="stat"><div class="stat-n">0</div><div class="stat-l">Shame</div></div>
+  <div class="stat"><div class="stat-n">&#10024;</div><div class="stat-l">New Nature</div></div>
+  <div class="stat"><div class="stat-n">&#127775;</div><div class="stat-l">All Stages</div></div>
+</div>
+
+<!-- ═══════════════════════ THE VOID ═══════════════════════ -->
+
+<section class="sec bg-wh">
+  <div class="in">
+    <div class="ey">&#127783;&#65039; Where You Are</div>
+
+```
+<h2 class="hl">You didn&rsquo;t choose this.<br>And you&rsquo;re more tired of it<br><em>than anyone else in the room.</em></h2>
+
+<p class="bt">Nobody wakes up one day and decides this is the life they want. It crept in. Maybe through pain, through loss, through a season that asked too much and gave too little. And before you knew it, what started as relief became a chain.</p>
+
+<p class="bt">You&rsquo;ve tried. Maybe more times than you can count. You&rsquo;ve had the conversations, made the promises, felt the shame pile higher with every stumble. And through all of it &mdash; somewhere underneath the exhaustion &mdash; there is a voice that still says: <strong>this is not who I am. This is not how my story ends.</strong></p>
+
+<p class="bt">Maybe you&rsquo;ve been told you just need more willpower. More accountability. More discipline. Maybe the church made you feel like your struggle was evidence of weak faith. Maybe you&rsquo;ve sat in rooms where the language of shame was handed out like medicine and you left feeling worse than when you arrived.</p>
+
+<div class="pq">
+  <p>&#8220;I knew God hadn&rsquo;t given up on me. I just didn&rsquo;t have words that sounded like He hadn&rsquo;t. Everything I heard about myself sounded like condemnation &mdash; even from myself.&#8221;</p>
+</div>
+
+<p class="bt">That voice that still believes &mdash; the one that&rsquo;s still there even on the worst days &mdash; <strong>that is the voice of your new nature.</strong> And it deserves to be fed. Not with guilt. Not with pressure. With truth. The Word of God, spoken over the person He already made you to be.</p>
+
+<div class="note-box">
+  <div class="note-icon">&#128153;</div>
+  <div class="note-text"><strong>A note before we go further:</strong> This deck was written for the person in the middle of it &mdash; not the person who has it all figured out. You do not have to be free before you start declaring. These words are for exactly where you are, right now.</div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ DARK BREAK ═══════════════════════ -->
+
+<div class="ds">
+  <div class="in">
+    <h2>The enemy wants you to believe<br>the story is <em>already written.</em></h2>
+    <p>That who you&rsquo;ve been is who you&rsquo;ll always be. That the pattern is too deep, the damage too done, the distance from God too far to close. That the shame you carry is permanent proof of your identity.</p>
+    <p><strong>But that is not what Scripture says.</strong> Scripture says the old has gone. The new has come. Scripture says you were known before you were formed. That nothing &mdash; not your history, not your habit, not your worst day &mdash; can separate you from the love of God.</p>
+    <p>The fight for freedom begins in the mind. And <strong>the mind is changed by what it hears repeatedly.</strong> That is why declaration matters. That is why speaking the Word over yourself &mdash; out loud, every day &mdash; is not a ritual. It is warfare.</p>
+    <p class="verse">&#8220;Do not conform to the pattern of this world, but be transformed by the renewing of your mind.&#8221;<br>&mdash; Romans 12:2</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ THE PERCH ═══════════════════════ -->
+
+<section class="sec bg-pale">
+  <div class="in">
+    <div class="ey">&#127752; The Shift</div>
+
+```
+<h2 class="hl">Imagine starting your day with words that <em>remind you who you actually are.</em></h2>
+
+<p class="bt">Not what the addiction says about you. Not what the shame says. Not what the people who don&rsquo;t understand say. But what <strong>God says</strong> &mdash; over your identity, your mind, your freedom, your future, your worth, and the new nature He placed inside you the moment you said yes to Him.</p>
+
+<p class="bt"><strong>The NewNature Deck</strong> is a beautifully designed PDF guide packed with scripture-based declarations for every stage of the journey through addiction. Whether you&rsquo;re still in the middle of the struggle, standing in early recovery on shaky ground, or learning what it actually means to live free &mdash; these declarations were written for exactly where you are.</p>
+
+<p class="bt">There is no performance required here. No minimum level of holiness before you can open this. You pick it up where you are, you speak what it says, and you let the Word of God do what it has always done &mdash; <strong>it does not return empty.</strong></p>
+
+<div class="pq">
+  <p>&#8220;So shall My word be that goes out from My mouth; it shall not return to Me empty, but it shall accomplish that which I purpose, and shall succeed in the thing for which I sent it.&#8221;</p>
+  <span class="ref">Isaiah 55:11</span>
+</div>
+
+<p class="bt">These are not just encouraging words. They are weapons. Spoken out loud, over your own life, in the moments when everything in you wants to believe the lie &mdash; these declarations interrupt the pattern. They remind your mind, your body, and your spirit <strong>who it is that you belong to.</strong></p>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ THE SOAR ═══════════════════════ -->
+
+<section class="sec bg-wh">
+  <div class="in">
+    <div class="ey">&#127775; Three Things That Begin to Shift</div>
+
+```
+<h2 class="hl">What happens when you speak truth<br><em>louder than the lie.</em></h2>
+
+<div class="fg">
+  <div class="fc">
+    <div class="fc-icon">&#129504;</div>
+    <div class="fc-title">Your Identity Starts to Change</div>
+    <div class="fc-desc">Not slowly, through willpower. But through repetition of truth. When you hear the same Word about yourself every day &mdash; that you are chosen, that you are new, that you are not defined by what you&rsquo;ve done &mdash; something in you begins to believe it. That belief is the foundation everything else is built on.</div>
+  </div>
+  <div class="fc">
+    <div class="fc-icon">&#128274;</div>
+    <div class="fc-title">The Shame Loses Its Grip</div>
+    <div class="fc-desc">Shame keeps you in cycles by making you feel too broken to reach for something better. When you declare what God says about you &mdash; forgiven, covered, known, loved &mdash; the shame has less room to operate. Not because you earned it. Because you received it. That is the difference.</div>
+  </div>
+  <div class="fc">
+    <div class="fc-icon">&#127756;</div>
+    <div class="fc-title">Freedom Becomes Something You Can Picture</div>
+    <div class="fc-desc">For a long time, freedom might have felt like something other people got. Something you hoped for but couldn&rsquo;t quite see for yourself. These declarations begin to build a picture of freedom in your mind &mdash; and your mind will move toward what it consistently imagines. That is not psychology. That is Scripture.</div>
+  </div>
+</div>
+
+<p class="bt" style="margin-top:40px; font-style:italic; font-size:19px; color:#0D1B30; font-weight:400; line-height:1.65;">
+  You do not have to be fully free to start speaking freedom over yourself. You just have to be willing to say it &mdash; even when you don&rsquo;t feel it yet. Especially then.
+</p>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHAT'S INSIDE ═══════════════════════ -->
+
+<section class="sec bg-pale">
+  <div class="in wide">
+    <div class="ey">&#128218; What&rsquo;s Inside the Deck</div>
+    <h2 class="hl" style="max-width:600px;">Scripture-based declarations for every part of the journey &mdash; from the struggle to the freedom.</h2>
+
+```
+<div class="pillar-grid">
+
+  <div class="pg">
+    <div class="pg-num">01</div>
+    <div>
+      <div class="pg-icon">&#127775;</div>
+      <div class="pg-title">Identity &amp; Who You Are in God</div>
+      <div class="pg-desc">The most dangerous lie addiction tells you is that you are what you do. These declarations speak directly to that lie. They anchor you in who God says you are &mdash; chosen, known, beloved, and made new &mdash; before you had anything to offer. This is the foundation every other declaration builds on.</div>
+    </div>
+  </div>
+
+  <div class="pg">
+    <div class="pg-num">02</div>
+    <div>
+      <div class="pg-icon">&#129504;</div>
+      <div class="pg-title">Renewing the Mind &amp; Breaking Thought Patterns</div>
+      <div class="pg-desc">The cycle of addiction lives largely in the mind &mdash; in the thoughts, cravings, and narratives that replay before the body ever acts. These declarations target those patterns at their root, speaking the truth of Romans 12:2 over your thought life daily until what you believe about yourself begins to change.</div>
+    </div>
+  </div>
+
+  <div class="pg">
+    <div class="pg-num">03</div>
+    <div>
+      <div class="pg-icon">&#128274;</div>
+      <div class="pg-title">Freedom, Healing &amp; Deliverance</div>
+      <div class="pg-desc">Declarations that call forth the complete freedom Jesus promised &mdash; not just management of the struggle, but genuine deliverance. For the days when you are in the fire, these are the words you speak. For the days when you feel the pull returning, these are what you reach for first.</div>
+    </div>
+  </div>
+
+  <div class="pg">
+    <div class="pg-num">04</div>
+    <div>
+      <div class="pg-icon">&#10024;</div>
+      <div class="pg-title">Grace, Forgiveness &amp; Freedom from Shame</div>
+      <div class="pg-desc">Shame is not conviction. Conviction draws you back to God. Shame drives you away. These declarations speak the grace of God loudly over the guilt &mdash; not to excuse anything, but to remind you that the cross was big enough. That you are forgiven. That you do not have to earn your way back.</div>
+    </div>
+  </div>
+
+  <div class="pg">
+    <div class="pg-num">05</div>
+    <div>
+      <div class="pg-icon">&#127807;</div>
+      <div class="pg-title">Strength, Endurance &amp; the Long Walk</div>
+      <div class="pg-desc">Recovery is not a moment. It is a daily, sometimes hourly, choice to keep walking toward the truth. These declarations build endurance &mdash; the kind that doesn&rsquo;t give up after a stumble, that picks back up and keeps going because God&rsquo;s mercies are new every single morning.</div>
+    </div>
+  </div>
+
+  <div class="pg">
+    <div class="pg-num">06</div>
+    <div>
+      <div class="pg-icon">&#127756;</div>
+      <div class="pg-title">Purpose, Calling &amp; the Future God Wrote</div>
+      <div class="pg-desc">One of the most powerful weapons against addiction is a vision of the future. When you can see who you are becoming &mdash; not who you were, not who you&rsquo;ve been, but who God called you to be &mdash; it changes what you&rsquo;re willing to fight for. These declarations call that future forward by name.</div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROMISE STRIP ═══════════════════════ -->
+
+<div class="promise-strip">
+  <h3>
+    You don&rsquo;t have to clean yourself up<br>
+    before you come to the Word.<br>
+    <em>The Word is what cleans you up.</em>
+  </h3>
+</div>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+
+<section class="sec bg-sky">
+  <div class="in wide">
+    <div class="ey">&#127775; What People Are Saying</div>
+    <h2 class="hl" style="max-width:520px;">Real people. Real journeys. Real shifts.</h2>
+
+```
+<div class="tg">
+  <div class="tc">
+    <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="tc-text">&ldquo;I bought this in the middle of one of the worst weeks I&rsquo;d had in months. I didn&rsquo;t feel spiritual. I didn&rsquo;t feel hopeful. I just opened it and started reading the declarations out loud because I had nothing else. And something shifted. Not everything &mdash; but something. Enough to keep going.&rdquo;</div>
+    <div class="tc-name">K.M.</div>
+    <div class="tc-role">Three years into the journey &middot; UK</div>
+  </div>
+  <div class="tc">
+    <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="tc-text">&ldquo;The shame section changed things for me. I had been carrying so much guilt that I couldn&rsquo;t even pray properly. Reading those declarations out loud about being forgiven &mdash; actually saying the words with my own mouth &mdash; was the first time in a long time I felt like God wasn&rsquo;t disgusted with me.&rdquo;</div>
+    <div class="tc-name">T.A.</div>
+    <div class="tc-role">Early recovery &middot; Lagos, Nigeria</div>
+  </div>
+  <div class="tc">
+    <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="tc-text">&ldquo;I bought this for myself and ended up sharing it with two people in my recovery group. The purpose and calling section especially &mdash; a lot of us stopped believing we had a future worth fighting for. This reminded us that we do.&rdquo;</div>
+    <div class="tc-name">D.O.</div>
+    <div class="tc-role">Recovery community leader &middot; Accra, Ghana</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+
+<section class="cta-sec" id="get">
+  <div class="cta-box">
+
+```
+<h2>Your new nature is already<br><em>inside you.</em></h2>
+
+<p>The NewNature Deck is a beautifully designed, scripture-rooted PDF guide &mdash; yours instantly. No shipping. No waiting. Just the Word of God, written for where you are, ready to be spoken over the person God is making you into.</p>
+
+<div class="cta-price">$14.99</div>
+<div class="cta-price-note">One-time purchase &middot; Instant digital download</div>
+
+<a href="https://morningkoinonia.selar.com/7761079f77" target="_blank" class="cta-btn">
+  Get Instant Access &mdash; $14.99 &rarr;
+</a>
+
+<div class="cta-inc">
+  <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Scripture-based declarations across 6 pillars of the journey</span></div>
+  <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Written for every stage &mdash; struggle, recovery, and freedom</span></div>
+  <div class="cta-row"><div class="cta-chk">&#10003;</div><span>No shame, no performance &mdash; just you and the Word</span></div>
+  <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Beautifully designed PDF &mdash; use on your phone, tablet, or print</span></div>
+  <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Instant download &mdash; in your hands within minutes</span></div>
+</div>
+
+<p class="cta-verse">
+  &#8220;Therefore, if anyone is in Christ, the new creation has come:<br>
+  The old has gone, the new is here.&#8221;<br>
+  &mdash; 2 Corinthians 5:17
+</p>
+
+<div class="cta-guar">
+  &#128274; <strong>Secure checkout via Selar.</strong> Digital product &mdash; no physical items shipped. You&rsquo;ll receive your file immediately after payment. Need help? Email <a href="mailto:tomiwabankole172@gmail.com">tomiwabankole172@gmail.com</a> &mdash; I&rsquo;ll get back to you personally.
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+
+<footer>
+  <div class="fl">The <span>NewNature</span> Deck</div>
+  <div class="fl-sub">By KoinoCards &middot; T.BANKS</div>
+  <p>
+    <a href="mailto:tomiwabankole172@gmail.com">tomiwabankole172@gmail.com</a><br><br>
+    Digital product &middot; No physical items shipped &middot; Instant access after purchase<br>
+    Product images are for display purposes only.<br>
+    Thank you for trusting this to be part of your journey. &mdash; T.BANKS xx
+  </p>
+</footer>
+
+</body>
+</html>
